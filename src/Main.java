@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     // новый коммит
-    private static File desktop = new File("C:/Users/Forex/Desktop");
+    private static File desktop;
 
     // Получение расширения файла
     public static String getType(String fileName) {
@@ -57,7 +57,15 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        String user = System.getProperty("user.name");
+        desktop = new File("C:/Users/" +user + "/Desktop");
+        if(!desktop.exists()) {
+            desktop = new File("C:/Users/Forex/Desktop");
+        }
 
+        File dir = new File(desktop.getAbsolutePath() + "/Pannier");
+        if(!dir.exists())
+            dir.mkdir();
         // создание основной директории
         File mainDir = new File(desktop.getAbsolutePath() + "/Pannier/" + getDate());
         if(mainDir.exists()) {
