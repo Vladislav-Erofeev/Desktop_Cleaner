@@ -7,7 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-
+    // новый коммит
     private static File desktop = new File("C:/Users/Forex/Desktop");
 
     // Получение расширения файла
