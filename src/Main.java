@@ -57,10 +57,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String user = System.getProperty("user.name");
-        desktop = new File("C:/Users/" +user + "/Desktop");
+        String user = System.getProperty("user.home");
+        System.out.println(user);
+        desktop = new File(System.getProperty("user.home") + "/Desktop");
         if(!desktop.exists()) {
-            desktop = new File("C:/Users/Forex/Desktop");
+            desktop = new File(System.getProperty("user.home") + "/OneDrive/Desktop");
         }
 
         File dir = new File(desktop.getAbsolutePath() + "/Pannier");
